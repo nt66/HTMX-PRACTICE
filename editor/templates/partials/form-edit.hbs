@@ -1,0 +1,17 @@
+{{!-- <form hx-put="/editor/edit/{{document.id}}" hx-target="#detail">
+  <div><button type="submit">Save</button></div>
+  <hr />
+  <input type="text" name="title" value="{{document.title}}" placeholder="Untitled document" />
+  <textarea name="text">{{document.text}}</textarea>
+</form> --}}
+<form id="editorForm" 
+  hx-on="htmx:configRequest: event.detail.headers=''; event.detail.headers['Content-Type']='application/x-www-form-urlencoded;charset=UTF-8'"
+  hx-get="http://127.0.0.1:3000/editor/edit/{{newId}}" hx-target="#editor">
+  <p class="formitem"><span>表单名称：<span><input type="text" name="title" /></p>
+  <p class="formitem"><span>表单内容：</span><textarea name="text"></textarea></p>
+  <p class="formitem submit"><button type="submit">保存</button> </p>
+</form>
+
+{{#if isUpdate}}
+  {{> menu documents=documents isUpdate=isUpdate}}
+{{/if}}

@@ -1,0 +1,30 @@
+<div id="sidebar"  _="on htmx:afterOnLoad take .active for event.target" {{#if isUpdate}}hx-swap-oob="true" {{/if}}>
+  {{#each documents as |document|}}
+      <div class="list">
+        <di
+          href="javascript:void(0)" 
+          hx-on="htmx:configRequest: event.detail.headers=''; event.detail.headers['Content-Type']='application/x-www-form-urlencoded;charset=UTF-8'"
+          hx-get="http://127.0.0.1:3000/editor/detail/{{document.id}}" 
+          hx-target="#editor" 
+          {{!-- hx-push-url="true" --}}
+          class="{{#if document.isActive}}active{{/if}}">
+          {{document.title}}
+        </a>
+      </div>
+    {{/each}}
+    {{!-- <div class="list">
+        <a href="javascript:void(0)">123123</a>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)">222222</a>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)">333333</a>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)">444444</a>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0)">55555</a>
+    </div> --}}
+</div>

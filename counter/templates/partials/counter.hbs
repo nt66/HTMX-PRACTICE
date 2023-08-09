@@ -1,0 +1,8 @@
+<button hx-post="/counter/sub" hx-target="#container" class="btn btnleft" {{#if
+  state.buttonState.subIsDisabled}}disabled{{/if}}>-</button>
+<div id="values">
+  <h1>{{state.count}}</h1>
+</div>
+<button hx-post="/counter/add" hx-target="#container" class="btn btnright" {{#if
+  state.buttonState.addIsDisabled}}disabled{{/if}}>+</button>
+<input type="hidden" name="_csrf" value="{{state.csrfToken}}">

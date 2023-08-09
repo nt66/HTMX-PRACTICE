@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htmx.js 示例 demos</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #main .logo {
+        font-size: 100px;
+      }
+      #main .logochars {
+          color: rgb(61, 114, 215);
+      }
+      #main.appear * {
+        opacity: 1;
+        top: 10px;
+      }
+      .logo {
+        color: inherit;
+        text-decoration: none;
+        font-size: 28px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <span class="logo dark">&lt;<a class="logochars">/</a>&gt; <span class="no-mobile">htm<a class="logochars">x</a></span></span>
+      <ul>
+        <li><a href="/hello-world">例子1: Hello World</a></li>
+        <li><a href="/counter">例子2: 计算器</a></li>
+        <li><a href="/todo">例子3:  todolist</a></li>
+        <!-- <li><a href="/dtdform">例子4:  dtd表单</a></li> -->
+        <!-- <li><a href="/editor">Editor</a></li> -->
+      </ul>
+    </div>
+  </body>
+</html>
